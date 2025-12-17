@@ -12,7 +12,7 @@ const Signup = () => {
     event.preventDefault();
 
     try {
-      const req = await axios.post("https://secegitrepocys.onrender.com//signup", {
+      const req = await axios.post("https://secegitrepocys.onrender.com/signup", {
         email,
         username,
         password,
@@ -25,7 +25,7 @@ const Signup = () => {
         navigate("/login");
       }
     } catch (e) {
-      alert("Login Failed", e);
+      alert("Signup Failed", e);
     }
   };
 
