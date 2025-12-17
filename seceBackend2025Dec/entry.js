@@ -27,7 +27,7 @@ app.post("/signup", async (req, res) => {
     password: hashedPassword,
   });
   newSignup.save();
-  res.status(200).json({ Message: "Signup Successful", isSignup: true });
+  res.status(200).json({ "message": "Signup Successful", "isSignup": true });
 });
 
 app.post("/login", async (req, res) => {
