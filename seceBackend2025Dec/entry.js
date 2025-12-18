@@ -13,8 +13,13 @@ app.use(cors())
 dotenv.config()
 
 const cors = require('cors');
+// Update the CORS configuration to include your Vercel URL
 app.use(cors({
-  origin: ['https://your-vercel-app.vercel.app', 'http://localhost:3000'],
+  origin: [
+    'https://mern-intern-2025.vercel.app', // Your Vercel frontend URL
+    'http://localhost:3000', // For local development
+    'https://your-vercel-app.vercel.app' // Keep existing if needed
+  ],
   credentials: true
 }));
 
