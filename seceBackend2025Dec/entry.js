@@ -12,6 +12,12 @@ app.use(express.json());
 app.use(cors())
 dotenv.config()
 
+const cors = require('cors');
+app.use(cors({
+  origin: ['https://your-vercel-app.vercel.app', 'http://localhost:3000'],
+  credentials: true
+}));
+
 mdb
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB Connection Successful"))
