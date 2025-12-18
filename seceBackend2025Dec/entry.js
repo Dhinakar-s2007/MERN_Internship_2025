@@ -9,11 +9,6 @@ const app = express();
 const PORT = 8001;
 
 app.use(express.json());
-app.use(cors())
-dotenv.config()
-
-const cors = require('cors');
-// Update the CORS configuration to include your Vercel URL
 app.use(cors({
   origin: [
     'https://mern-intern-2025.vercel.app', // Your Vercel frontend URL
