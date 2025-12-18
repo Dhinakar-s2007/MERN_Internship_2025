@@ -9,9 +9,11 @@ const Login = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    console.log('Login attempt with:', { email });
+    console.log('API URL:', import.meta.env.VITE_API_URL);
 
     try {
-      const req = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
+      const req = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
         email,
         password,
       });
@@ -24,7 +26,23 @@ const Login = () => {
         navigate("/");
       }
     } catch (e) {
-      alert("Login Failed",e);
+      console.error('Login error:', e);
+      if (e.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error('Response data:', e.response.data);
+        console.error('Response status:', e.response.status);
+        console.error('Response headers:', e.response.headers);
+        alert(`Login Failed: ${e.response.data?.message || e.message}`);
+      } else if (e.request) {
+        // The request was made but no response was received
+        console.error('No response received:', e.request);
+        alert('Login Failed: No response from server. Please check your connection.');
+      } else {
+        // Something happened in setting up the request
+        console.error('Request setup error:', e.message);
+        alert(`Login Failed: ${e.message}`);
+      }
     }
   };
 
