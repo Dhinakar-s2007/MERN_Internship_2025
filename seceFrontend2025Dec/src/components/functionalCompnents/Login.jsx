@@ -11,7 +11,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const req = await axios.post("https://your-render-backend.onrender.com/login", {
+      const req = await axios.post("https://mern-intern-2025.onrender.com/login", {
         email,
         password,
       });
