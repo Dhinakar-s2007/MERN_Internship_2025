@@ -13,6 +13,7 @@ import UseEffectAPI from "./components/functionalCompnents/Hooks/UseEffectAPI";
 import UseRef from "./components/functionalCompnents/Hooks/UseRef";
 import UseMemo from "./components/functionalCompnents/Hooks/UseMemo";
 import UseCallback from "./components/functionalCompnents/Hooks/UseCallback";
+import viteLogo from '/vite.svg';
 function App() {
   return (
     <div className="app">
