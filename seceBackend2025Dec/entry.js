@@ -14,7 +14,7 @@ dotenv.config();
 // CORS configuration
 const corsOptions = {
   origin: [
-    'https://mern-intern-2025.vercel.app',
+    'https://mern-internship-2025-delta.vercel.app/',
     'http://localhost:3000'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
