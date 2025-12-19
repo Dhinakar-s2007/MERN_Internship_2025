@@ -41,7 +41,7 @@ app.use((req, res, next) => {
 
 // Database connection
 mdb
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connection Successful"))
   .catch((err) => console.log("MongoDB Connection Unsuccessful", err));
 
